@@ -20,7 +20,7 @@ const Home = () => {
   useEffect(()=>{
 
     const filteredProducts = products.filter(
-      item => item.category === 'Chair');
+      item => item.category === 'chair');
       setData(filteredProducts);
 
   },[]);
