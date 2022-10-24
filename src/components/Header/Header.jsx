@@ -2,36 +2,55 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './header.css'
 import logo from '../../assets/images/eco-logo.png'
-import usericon from '../../assets/images/user_icon.png'
+import usericon from '../../assets/images/user-icon.png'
 import { Container , Row } from 'reactstrap'
+
+import {motion} from 'framer-motion'
+
+const nav__link = [
+  {
+    path:'home',
+    display: 'Home'
+  },
+  {
+    path:'shop',
+    display: 'Shop'
+  },
+  {
+    path:'cart',
+    display: 'Cart'
+  },
+
+]
 
 const Header = () => {
   return <header className="header">
     <Container>
       <Row>
-        <div className="nav_wrapper">
+        <div className="nav__wrapper">
           <div className="logo">
-            <img src={logo} alt="Logo" />
+            <img src={logo} alt="logo" />
             <div>
               <h1>Plant Shop</h1>
-              <p>since 2022</p>
           </div>
         </div>
           <div className="navigation">
            <ul className="menu">
-            <li className="nav__item">
-                <NavLink to="home">Home</NavLink>
-            </li>
-            <li className="nav__item">
-                <NavLink to="Shop">Shop</NavLink>
-            </li>
-            <li className="nav__item">
-                <NavLink to="cart">Cart</NavLink>
-            </li>
-            <li className="nav__item">
-                <NavLink to="home">Home</NavLink>
-            </li>
-           </ul>
+           
+            {
+              nav__link.map((item, index) => (
+                <li className="nav__item" key={index}>
+                  <NavLink
+                  to={item.path}
+                  className={(navClass) =>
+                    navClass.isActive ? 'nav__active' :''
+                  }
+                  >
+                    {item.display}
+                  </NavLink>
+                    </li>
+              ))}
+            </ul>
           </div>
 
           <div className="nav__icons">
@@ -39,12 +58,14 @@ const Header = () => {
 
             <span className="fav__icon">
             <i class="ri-heart-fill"></i>
+            <span className="badge">1</span>
             </span>
             <span className="cart__icon">
             <i class="ri-shopping-cart-fill"></i>
+            <span className="badge">1</span>
             </span>
             <span>
-              <img src={usericon} alt="userimage" />
+              <motion.img whileTap={{scale:1.2}} src={usericon} alt="userimage" />
             </span>
           </div>
 
