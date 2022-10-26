@@ -20,9 +20,8 @@ const ProductCard = ({item}) => {
             image:item.imageUrl
 
         }))
-      
+          
             toast.success('Product added successfully');
-
     }
 
   return (
