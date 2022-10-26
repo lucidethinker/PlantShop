@@ -3,6 +3,7 @@ import {motion} from 'framer-motion'
 import '../../styles/product-card.css'
 import {Col} from 'reactstrap'
 import {Link} from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
 
 import { useDispatch } from 'react-redux'
 import{cartActions} from '../../Redux/slices/cartSlice'
@@ -19,7 +20,9 @@ const ProductCard = ({item}) => {
             image:item.imageUrl
 
         }))
-        alert('product added to cart')
+      
+            toast.success('Product added successfully');
+
     }
 
   return (
