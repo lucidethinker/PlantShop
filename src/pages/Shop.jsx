@@ -13,12 +13,25 @@ const Shop = () => {
 
   const handleFilter = (e) =>{
     const filterValue = e.target.value;
-    if(filterValue === 'sofa')
+    if(filterValue === 'Indor Plants')
     {
-      const filteredProducts = products.filter((item)=>item.category === 'sofa'
+      const filteredProducts = products.filter((item)=>item.category === 'Indor Plant'
       );
       setProductsData(filteredProducts)
   }
+  if(filterValue === 'Outdor Plants')
+    {
+      const filteredProducts = products.filter((item)=>item.category === 'Outdor Plant'
+      );
+      setProductsData(filteredProducts)
+  }
+  if(filterValue === 'Seeds')
+    {
+      const filteredProducts = products.filter((item)=>item.category === 'seed'
+      );
+      setProductsData(filteredProducts)
+  }
+  
   
 };
   return <Helmet title="Shop">
@@ -30,9 +43,9 @@ const Shop = () => {
             <div className="filter__widget">
               <select onChange={handleFilter} >
                 <option > Filter By Category</option>
-                <option value="Indor Plant">Indor Plant</option>
-                <option value="Outdor Plant">Outdor Plant"</option>
-                <option value="Seed">Seed</option>
+                <option value="Indor Plants">Indor Plants</option>
+                <option value="Outdor Plants">Outdor Plants</option>
+                <option value="Seeds">Seeds</option>
               </select>
             </div>
         </Col>
@@ -58,7 +71,7 @@ const Shop = () => {
       </Container>
     </section>
 
-    <selection>
+    <selection className='pt-05'>
       <Container>
         <Row>
           {
