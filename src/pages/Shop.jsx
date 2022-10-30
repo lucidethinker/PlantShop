@@ -34,6 +34,19 @@ const Shop = () => {
   
   
 };
+
+const handleSearch = (e) =>{
+  const searchTerm = e.target.value
+  
+  const searchedProducts =products.filter(item=>item.productName.toLowerCase().includes(searchTerm.toLowerCase()))
+
+  setProductsData(searchedProducts)
+
+
+}
+
+
+
   return <Helmet title="Shop">
     <CommonSection title="Products"/>
     <section>
@@ -61,7 +74,7 @@ const Shop = () => {
             </Col>
         <Col lg='6' md='6'>
             <div className="search__box">
-                  <input type="text" placeholder="Search....." />
+                  <input type="text" placeholder="Search....."   onChange={handleSearch}/>
                   <span >
                   <i class="ri-search-2-line"></i>
                   </span>
