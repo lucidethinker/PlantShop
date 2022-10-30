@@ -12,12 +12,12 @@ const Shop = () => {
   const[productsData,setProductsData] = useState(products)
 
   const handleFilter = (e) =>{
-    const filtervalue = e.target.value;
-    if(filtervalue === "sofa")
+    const filterValue = e.target.value;
+    if(filterValue === 'sofa')
     {
-      const filtereProducts = products.filter((item)=>item.category === "sofa"
+      const filteredProducts = products.filter((item)=>item.category === 'sofa'
       );
-      setProductsData(filtereProducts)
+      setProductsData(filteredProducts)
   }
   
 };
@@ -62,9 +62,8 @@ const Shop = () => {
       <Container>
         <Row>
           {
-            productsData.length ===0?(<h1>No products are found!</h1>
-            ):<ProductList data={productsData}
- />  }
+            productsData.length === 0? <h1>No products are found!</h1>
+            :<ProductList data={productsData} />  }
         </Row>
         </Container>
     </selection>
