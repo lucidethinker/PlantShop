@@ -1,4 +1,4 @@
-import React,{useState ,useRef} from 'react'
+import React,{useState ,useRef,useEffect} from 'react'
 
 import { Container, Row, Col} from 'reactstrap'
 import { useParams } from 'react-router-dom'
@@ -34,8 +34,16 @@ const relatedProducts = products.filter(item => item.category===category)
 const submitHandler = (e) => {
   
   e.preventDefault()
-  const reviewUsername = reviewUser.current.value
-  const reviewUserMsg = reviewMsg.current.value
+  const reviewUsername = reviewUser.current.value;
+  const reviewUserMsg = reviewMsg.current.value;
+
+  const reviewObj = {
+    userName: reviewUsername,
+    text: reviewUserMsg,
+    rating: rating,    
+  };
+
+  console.log(reviewObj)
 
 };
 
@@ -51,7 +59,11 @@ const addToCart =() => {
 
    toast.success("Item added to cart")
 
-}
+};
+
+useEffect(()=>{
+  window.scrollTo(0,0)
+},[product])
 
 
   return <Helmet title={productName}>
@@ -67,11 +79,11 @@ const addToCart =() => {
                     <h1>{productName}</h1>
                     <div className="product__rating d-flex align-items-center gap-5 mb-3"></div>
                   <div>
-                  <span onClick={() =>setRating(1)}> <i class="ri-star-fill"></i></span>
-                  <span onClick={() =>setRating(2)}> <i class="ri-star-fill"></i></span>
-                  <span onClick={() =>setRating(3)}> <i class="ri-star-fill"></i></span>
-                  <span onClick={() =>setRating(4)}> <i class="ri-star-fill"></i></span>
-                  <span onClick={() =>setRating(5)}> <i class="ri-star-fill"></i></span>
+                  <span onClick={() =>setRating(1)}> 1<i class="ri-star-fill"></i></span>
+                  <span onClick={() =>setRating(2)}> 2<i class="ri-star-fill"></i></span>
+                  <span onClick={() =>setRating(3)}> 3<i class="ri-star-fill"></i></span>
+                  <span onClick={() =>setRating(4)}> 4<i class="ri-star-fill"></i></span>
+                  <span onClick={() =>setRating(5)}> 5<i class="ri-star-fill"></i></span>
                   
           </div>
           <p>(<span >{avgRating}</span>ratings)
@@ -130,7 +142,7 @@ const addToCart =() => {
                         ref={reviewUser}/>
                       </div>
 
-                     <div className="form__group d-flex align-items-center gap-5">
+                     <div className="form__group d-flex align-items-center gap-5 rating__group">
                       <span>1 <i class="ri-star-fill"></i></span>
                       <span>2 <i class="ri-star-fill"></i></span>
                       <span>3 <i class="ri-star-fill"></i></span>
