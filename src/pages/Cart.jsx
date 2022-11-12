@@ -3,7 +3,7 @@ import '../styles/cart.css';
 import Helmet from '../components/Helmet/Helmet';
 import CommonSection  from '../components/UI/CommonSection'
 import {Container , Row, Col} from 'reactstrap';
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion';
 import {cartActions} from '../Redux/slices/cartSlice'
 import { useSelector,useDispatch } from 'react-redux';
 
@@ -11,9 +11,6 @@ import { useSelector,useDispatch } from 'react-redux';
 const Cart = () => {
 
     const cartItems = useSelector(state => state.cart.cartItems);
-
-
-
 
 
   return(
@@ -39,20 +36,8 @@ const Cart = () => {
                                 <tbody>
                                   {
                                     cartItems.map((item,index) =>(
-
-                                      <tr key={index}>
-                                    
-
-                                        <td>
-                                          <img src={item.imgUrl} alt="" />
-                                        </td>
-                                        <td>{item.productName}</td>
-                                        <td>{item.price}</td>
-                                        <td>{item.quantity}</td> 
-                                        <td>
-                                        <i class="ri-delete-bin-6-line"></i>
-                                        </td>
-                                      </tr>
+                                        <Tr item={item} key={index}/>
+                                     
                                     ))
                                   }
 
@@ -73,5 +58,26 @@ const Cart = () => {
                       </Helmet>
                      )}
        
+const Tr = ({item}) =>{
+  const dispatch = useDispatch()
+  const deleteProduct = () =>{
+    dispatch(cartActions.deleteItem(item.id))
+  }
+  return  <tr>
+                                    
 
+  <td>
+    <img src={item.imgUrl} alt="" />
+  </td>
+  <td>{item.productName}</td>
+  <td>{item.price}</td>
+  <td>{item.quantity}</td> 
+  <td>
+  <motion.i 
+  whileTap={{scale: 1.2}} 
+  onClick={deleteProduct}
+  class="ri-delete-bin-6-line"></motion.i>
+  </td>
+</tr>
+}
 export default Cart
