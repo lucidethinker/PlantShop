@@ -5,6 +5,8 @@ import logo from '../../assets/images/logo.svg'
 import usericon from '../../assets/images/user-icon.png'
 import { Container , Row } from 'reactstrap'
 import { useSelector } from 'react-redux'
+import useAuth from '../../custom-hooks/useAuth'
+import {Link} from 'react-router-dom'
 
 import {motion} from 'framer-motion'
 
@@ -28,10 +30,12 @@ const Header = () => {
 
   const headerRef = useRef(null)
   const totalQuantity = useSelector(state=>state.cart.totalQuantity)
+  const profileActionRef = useRef(null)
 
 
   const menuRef = useRef(null)
   const navigate = useNavigate()
+  const {currentUser} = useAuth()
 
 
   const stickyHeaderFunc = () =>{
@@ -58,7 +62,11 @@ const Header = () => {
 
   const navigateToCart = () => {
               navigate('/cart')
-  }
+  };
+  
+  const toggleProfileActions = ()=> profileActionRef.current.classList.toggle('show__profileActions')
+
+
   return <header className="header" ref={headerRef}>
     <Container>
       <Row>
@@ -99,12 +107,27 @@ const Header = () => {
             <i class="ri-shopping-cart-fill"></i>
             <span className="badge">{totalQuantity}</span>
             </span>
-            <span>
-              <motion.img whileTap={{scale:1.2}} src={usericon} alt="userimage" />
-            </span>
+            <div className="profile">
+              <motion.img whileTap={{scale:1.2}} src={currentUser?currentUser.photoURL: usericon} 
+              alt="userimage"
+              onClick={toggleProfileActions} />
+              
+              <div className="profile__actions" ref={profileActionRef} 
+              onClick={toggleProfileActions}>
+                {
+                  currentUser? <span>Logout</span> : <div>
+                    <Link to='/signup'>Signup</Link>
+                    <Link to='/login'>Login</Link>
+
+                    </div>
+                }
+              </div>
+
+
+            </div>
             <div className="mobile__menu">
             <span onClick={menuToggle}>
-            <i class="ri-menu-line"></i>
+            <i className="ri-menu-line"></i>
             </span>
           </div>
           </div>
