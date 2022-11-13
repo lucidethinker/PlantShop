@@ -19,3 +19,7 @@ h4 {
 .checkout__cart h6 {
     margin-bottom: 20px;
 }
+
+.checkout__cart h4 {
+    padding-top: 20px;
+}
