@@ -90,7 +90,7 @@
         .nav__icons .profile .profile__actions {
             position: absolute;
             top: 98%;
-            left: 10;
+            left: 0;
             width: 90px;
             z-index: 10;
             padding: 15px;

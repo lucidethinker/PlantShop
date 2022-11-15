@@ -1,5 +1,5 @@
-import productImg01 from "../images/double-sofa-01.png";
-import productImg02 from "../images/double-sofa-02.png";
+import productImg01 from "../images/moneytree.jpg";
+import productImg02 from "../images/Fiddleleaffig.webp";
 import productImg03 from "../images/double-sofa-03.png";
 
 import productImg04 from "../images/single-sofa-01.jpg";
@@ -31,10 +31,10 @@ import productImg25 from "../images/wireless-03.png";
 const products = [
   {
     id: "01",
-    productName: "Stone and Beam Westview ",
+    productName: "Money Tree",
     imgUrl: productImg01,
-    category: "sofa",
-    price: 193,
+    category: "Indor Plant",
+    price: 100,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -50,10 +50,10 @@ const products = [
 
   {
     id: "02",
-    productName: "Rivet Bigelow Modern ",
+    productName: "Fiddle Leaf Fig",
     imgUrl: productImg02,
-    category: "sofa",
-    price: 253,
+    category: "Indor Plant",
+    price: 1250,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:

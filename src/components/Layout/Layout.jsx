@@ -5,11 +5,11 @@ import Routers from '../../Routers/Routers'
 
 const Layout = () => {
   return <>
-  <Header   />
+  <Header/>
   <div>
-    <Routers />
+    <Routers/>
   </div>
-  <Footer />
+  <Footer/>
   </>
 }
 

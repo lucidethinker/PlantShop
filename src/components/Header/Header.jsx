@@ -55,7 +55,7 @@ const Header = () => {
 
  return ()=>window.removeEventListener('scroll',stickyHeaderFunc)
 
-
+ 
   })
   const menuToggle = ()=> menuRef.current.classList.toggle('active__menu ') 
   
@@ -64,7 +64,8 @@ const Header = () => {
               navigate('/cart')
   };
   
-  const toggleProfileActions = ()=> profileActionRef.current.classList.toggle('show__profileActions')
+  const toggleProfileActions = ()=> 
+  profileActionRef.current.classList.toggle("show__profileActions")
 
 
   return <header className="header" ref={headerRef}>
@@ -109,21 +110,19 @@ const Header = () => {
             </span>
             <div className="profile">
               <motion.img whileTap={{scale:1.2}} src={currentUser?currentUser.photoURL: usericon} 
-              alt="userimage"
               onClick={toggleProfileActions} />
               
-              <div className="profile__actions" ref={profileActionRef} 
+              <div className="profile__actions" 
+              ref={profileActionRef} 
               onClick={toggleProfileActions}>
                 {
-                  currentUser? <span>Logout</span> : <div>
+                  currentUser? (<span>Logout</span>) :
+                  ( <div>
                     <Link to='/signup'>Signup</Link>
                     <Link to='/login'>Login</Link>
-
                     </div>
-                }
+                )}
               </div>
-
-
             </div>
             <div className="mobile__menu">
             <span onClick={menuToggle}>

@@ -56,7 +56,7 @@ const handleSearch = (e) =>{
             <div className="filter__widget">
               <select onChange={handleFilter} >
                 <option > Filter By Category</option>
-                <option value="Indor Plants">Indor Plants</option>
+                <option value="Indor Plants">Indoor Plants</option>
                 <option value="Outdor Plants">Outdor Plants</option>
                 <option value="Seeds">Seeds</option>
               </select>
