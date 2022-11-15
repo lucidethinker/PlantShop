@@ -13,6 +13,13 @@
     color: inherit;
 }
 
+.product_img img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
 .product_info span {
     font-size: 0.9rem;
 }
