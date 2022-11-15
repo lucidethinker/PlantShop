@@ -1,8 +1,8 @@
 import productImg01 from "../images/moneytree.jpg";
 import productImg02 from "../images/Fiddleleaffig.webp";
-import productImg03 from "../images/double-sofa-03.png";
+import productImg03 from "../images/Rubberplant.webp";
+import productImg04 from "../images/Giant bird of paradise.jpg";
 
-import productImg04 from "../images/single-sofa-01.jpg";
 import productImg05 from "../images/single-sofa-02.jpg";
 import productImg06 from "../images/single-sofa-03.jpg";
 import productImg007 from "../images/single-sofa-04.png";
@@ -73,9 +73,9 @@ const products = [
 
   {
     id: "03",
-    productName: "Amazon Brand Modern Sofa",
+    productName: "Rubber plant",
     imgUrl: productImg03,
-    category: "sofa",
+    category: "Indor Plant",
     price: 173,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -95,7 +95,7 @@ const products = [
   },
   {
     id: "26",
-    productName: "Rivet Bigelow Modern ",
+    productName: "Giant bird of paradise",
     imgUrl: productImg02,
     category: "sofa",
     price: 253,
@@ -117,10 +117,10 @@ const products = [
   },
   {
     id: "04",
-    productName: "Fllufy Sheep Sofa",
+    productName: "Giant bird of paradise",
     imgUrl: productImg04,
-    category: "sofa",
-    price: 163,
+    category: "Indor Plant",
+    price: 1060,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:

@@ -27,7 +27,7 @@ const Home = () => {
   useEffect(()=>{
 
     const filteredTrendingProducts = products.filter(
-      item => item.category === 'chair');
+      item => item.category === 'Indor Plant');
 
       const filteredBestSalesProducts = products.filter(
         item => item.category === 'sofa');

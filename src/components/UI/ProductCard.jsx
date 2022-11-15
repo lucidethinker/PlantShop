@@ -33,7 +33,7 @@ const ProductCard = ({item}) => {
         </div>
         <div className="p-2 product_info">
         <h3 className="product__name">
-            <Link to='/shop/id'>{item.productName}</Link>
+            <Link to={`/shop/${item.id}/`}>{item.productName}</Link>
         </h3>
         <span >{item.category}</span></div>
         <div className="product__card-bottom d-Flex align-items-center justify-content-between p-2">
