@@ -3,9 +3,9 @@ import productImg02 from "../images/Fiddleleaffig.webp";
 import productImg03 from "../images/Rubberplant.webp";
 import productImg04 from "../images/Giant bird of paradise.jpg";
 
-import productImg05 from "../images/single-sofa-02.jpg";
+import productImg05 from "../images/Dracaenamarginata.jpg";
 import productImg06 from "../images/single-sofa-03.jpg";
-import productImg007 from "../images/single-sofa-04.png";
+import productImg007 from "../images/geranium-pelargonium.webp";
 
 import productImg07 from "../images/arm-chair-01.jpg";
 import productImg08 from "../images/arm-chair-02.jpg";
@@ -96,7 +96,7 @@ const products = [
   {
     id: "26",
     productName: "Giant bird of paradise",
-    imgUrl: productImg02,
+    imgUrl: productImg05,
     category: "sofa",
     price: 253,
     shortDesc:
@@ -140,9 +140,9 @@ const products = [
 
   {
     id: "05",
-    productName: "Faux Velvet Sofa",
+    productName: "Madagascar dragon tree",
     imgUrl: productImg05,
-    category: "sofa",
+    category: "Indor Plant",
     price: 163,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -163,9 +163,9 @@ const products = [
 
   {
     id: "06",
-    productName: "Fllufy Sheep Sofa",
-    imgUrl: productImg06,
-    category: "sofa",
+    productName: "Dracaena corn plant",
+    imgUrl: productImg05,
+    category: "Indor Plant",
     price: 163,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -185,9 +185,9 @@ const products = [
   },
   {
     id: "07",
-    productName: "Sakarias Armchair",
+    productName: "Geraniums",
     imgUrl: productImg07,
-    category: "chair",
+    category: "Outdor Plant",
     price: 99,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
