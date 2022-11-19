@@ -30,7 +30,7 @@ const Home = () => {
       item => item.category === 'Indor Plant');
 
       const filteredBestSalesProducts = products.filter(
-        item => item.category === 'sofa');
+        item => item.category === 'seed');
 
 
 
