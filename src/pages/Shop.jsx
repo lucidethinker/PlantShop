@@ -6,7 +6,7 @@ import {Container,Row,Col} from 'reactstrap'
 
 
 import '../styles/shop.css'
-import products from '../assets/data/products'
+import useStore from '../assets/data/products'
 import ProductList from '../components/UI/ProductList'
 
 
@@ -44,15 +44,21 @@ const Shop = () => {
   
 };
 
-const handleSearch = (e) =>{
-  const searchTerm = e.target.value
-  
-  const searchedProducts =products.filter(item=>item.productName.toLowerCase().includes(searchTerm.toLowerCase()))
+const FilterInput = () =>{
+  const items = useStore((state) => state.products);
+  const name = items.map((item) =>
+  item.productName
+  )
+  const setFilter = useStore((state) => state.setFilter);
+return(
+  <div>
+     <input  type="text" placeholder="Search....."   onChange={(e)=>setFilter(e.target.value)}/>
+  </div>
 
-  setProductsData(searchedProducts)
+);}
 
 
-}
+
 
 
 
@@ -83,7 +89,7 @@ const handleSearch = (e) =>{
             </Col>
         <Col lg='6' md='12'>
             <div className="search__box">
-                  <input type="text" placeholder="Search....."   onChange={handleSearch}/>
+                <FilterInput/>
                   <span >
                   <i class="ri-search-2-line"></i>
                   </span>
