@@ -12,13 +12,14 @@ import productImg07 from "../images/purple-petunias.webp";
 
 import productImg13 from "../images/phone-01.jpg";
 
+import create from "zustand";
 
 
 
 
 
-
-const products = [
+const useStore = create((set) => ({
+ products : [
   {
     id: "01",
     productName: "Money Tree",
@@ -356,6 +357,19 @@ const products = [
     ],
     avgRating: 4.8,
   },
-];
+],
 
-export default products;
+addItem: (data) =>
+set((state) => ({
+ products: [
+ { productName: data.name, id: Math.random() * 100 ,Image:data.imgUrl,category:data.category,price:data.price,shortDesc:data.shortDesc,description:data.description},
+  ...state.products,
+ ]})),
+removeItem: (id) =>
+ set((state) => ({
+   products: state.products.filter((data) => data.id !== id),
+ })),
+}));
+
+export default useStore;
+
