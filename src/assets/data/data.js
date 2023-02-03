@@ -346,3 +346,4 @@ export const products = [
     avgRating: 4.8,
   },
 ];
+export default products;

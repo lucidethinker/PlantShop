@@ -3,6 +3,10 @@ import { products } from "./data";
 
 const useStore = create((set) => ({
   products: products,
+  searchText: "",
+  setSearchText: (value) => {
+    set({ searchText: value });
+  },
 
   addItem: (data) => {
     set((state) => ({
